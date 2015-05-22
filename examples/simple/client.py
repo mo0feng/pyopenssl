@@ -37,8 +37,9 @@ sock = SSL.Connection(ctx, socket.socket(socket.AF_INET, socket.SOCK_STREAM))
 sock.connect((sys.argv[1], int(sys.argv[2])))
 
 while 1:
-    line = sys.stdin.readline()
-    if line == '':
+    print('Input "exit" out:')
+    line = sys.stdin.readline().strip()
+    if line == 'exit':
         break
     try:
         sock.send(line)
